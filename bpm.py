@@ -4,8 +4,8 @@ from pandas.io.json import json_normalize
 
 url = 'https://bpm.nearmedic.ru/ServiceModel/AuthService.svc/Login'
 
-LOGIN = "Supervisor"
-PASSWORD = "Nearmedicph" 
+LOGIN = "xxx"
+PASSWORD = "xxx" 
 
 res = requests.post(url, json={"UserName":LOGIN, "UserPassword":PASSWORD})
 #print(res.text)
