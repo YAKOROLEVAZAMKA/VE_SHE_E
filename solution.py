@@ -1,13 +1,27 @@
-file = open('input.txt', 'r', encoding='utf8')
-pupils = []
-for line in file:
-    temp = line.split()
-    temp[0] = temp[0].replace('\ufeff', '')
-    temp2 = (temp[0], temp[1], temp[3])
-    pupils.append(temp2)
-pupils.sort(key=lambda x: x[0])
-file2 = open('output.txt', 'w', encoding='utf8')
-for line in pupils:
-    print(' '.join(map(str, line)), file=file2)
-file.close()
-file2.close()
+daysparty = list(map(int, input().split()))
+days = []
+for i in range(1, daysparty[0] + 1):
+    days.append(i)
+N = daysparty[1]
+# print(days)
+# print(party)
+party = []
+for i in range(N):
+    party.append(list(map(int, input().split())))
+# print(party)
+ddays = []
+for elem in party:
+    j = elem[0]
+    while j <= daysparty[0]:
+        ddays.append(j)
+        j += elem[1]
+# print(ddays)
+ddays = set(ddays)
+# print(ddays)
+holidays = []
+j = 6
+while j <= daysparty[0]:
+    ddays.discard(j)
+    ddays.discard(j + 1)
+    j += 7
+print(len(ddays))
