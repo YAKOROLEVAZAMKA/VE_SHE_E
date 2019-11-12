@@ -1,0 +1,27 @@
+a = ((1, {'name' : 'comp', 'price': '20000', 'quantity': 'sht'}),
+    (2, {'name' : 'printer', 'price': '6000', 'quantity': 'sht'}),
+    (3, {'name' : 'skaner', 'price': '2000', 'quantity': 'sht'})
+    )
+
+answer = {}
+temp = []
+
+for i in a:
+    temp.append(i[1])
+    
+for i in temp:
+    for j in i.keys():
+        if j in answer.keys():
+            if i[j] != answer[j]:
+                temp2 = []
+                if type(answer[j]) == str:
+                    temp2.append(answer[j])
+                else:
+                    for ele in answer[j]:
+                        temp2.append(ele)
+                temp2.append(i[j])
+                answer[j] = temp2
+        else:
+            answer[j] = i[j]
+
+print(answer)
