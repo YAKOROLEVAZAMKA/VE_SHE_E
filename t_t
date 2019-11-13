@@ -1,6 +1,6 @@
-a = ((1, {'name' : 'comp', 'price': '20000', 'quantity': 'sht'}),
-    (2, {'name' : 'printer', 'price': '6000', 'quantity': 'sht'}),
-    (3, {'name' : 'skaner', 'price': '2000', 'quantity': 'sht'})
+a = ((1, {'name' : 'comp', 'price': 20000, 'quantity': 'sht'}),
+    (2, {'name' : 'printer', 'price': 6000, 'quantity': 'sht'}),
+    (3, {'name' : 'skaner', 'price': 2000, 'quantity': 'sht'})
     )
 
 answer = {}
@@ -14,7 +14,7 @@ for i in temp:
         if j in answer.keys():
             if i[j] != answer[j]:
                 temp2 = []
-                if type(answer[j]) == str:
+                if type(answer[j]) == str or type(answer[j]) == int:
                     temp2.append(answer[j])
                 else:
                     for ele in answer[j]:
